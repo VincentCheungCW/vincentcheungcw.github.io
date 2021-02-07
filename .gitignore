@@ -1,0 +1,16 @@
+
+# intellij
+.idea
+*.iml
+
+# output files
+.DS_Store
+Thumbs.db
+db.json
+package-lock.json
+*.log
+
+# output folder
+node_modules/
+public
+.deploy*/
