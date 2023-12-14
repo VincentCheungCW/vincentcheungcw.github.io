@@ -38,6 +38,15 @@
   </url>
   
   <url>
+    <loc>https://vincentcheungcw.github.io/2020/python17/</loc>
+    
+    <lastmod>2023-12-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://vincentcheungcw.github.io/2021/varchar/</loc>
     
     <lastmod>2023-12-14</lastmod>
@@ -56,34 +65,7 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/2020/python17/</loc>
-    
-    <lastmod>2023-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://vincentcheungcw.github.io/categories/index.html</loc>
-    
-    <lastmod>2023-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://vincentcheungcw.github.io/2020/python15/</loc>
-    
-    <lastmod>2023-12-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://vincentcheungcw.github.io/2020/python16/</loc>
     
     <lastmod>2023-12-14</lastmod>
     
@@ -110,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/2020/python10/</loc>
+    <loc>https://vincentcheungcw.github.io/2020/python15/</loc>
     
     <lastmod>2023-12-14</lastmod>
     
@@ -119,7 +101,16 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/2020/python11/</loc>
+    <loc>https://vincentcheungcw.github.io/2020/python16/</loc>
+    
+    <lastmod>2023-12-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://vincentcheungcw.github.io/2020/python10/</loc>
     
     <lastmod>2023-12-14</lastmod>
     
@@ -137,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/2020/python06/</loc>
+    <loc>https://vincentcheungcw.github.io/2020/python11/</loc>
     
     <lastmod>2023-12-14</lastmod>
     
@@ -147,6 +138,15 @@
   
   <url>
     <loc>https://vincentcheungcw.github.io/2020/python07/</loc>
+    
+    <lastmod>2023-12-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://vincentcheungcw.github.io/2020/python06/</loc>
     
     <lastmod>2023-12-14</lastmod>
     
@@ -299,7 +299,7 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/2021/hiphop-tags/</loc>
+    <loc>https://vincentcheungcw.github.io/2019/frankOcean/</loc>
     
     <lastmod>2023-12-14</lastmod>
     
@@ -308,7 +308,7 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/2019/frankOcean/</loc>
+    <loc>https://vincentcheungcw.github.io/2021/hiphop-tags/</loc>
     
     <lastmod>2023-12-14</lastmod>
     
@@ -335,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/2020/music2019/</loc>
+    <loc>https://vincentcheungcw.github.io/2020/favAlbums2019/</loc>
     
     <lastmod>2023-12-14</lastmod>
     
@@ -344,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/2020/favAlbums2019/</loc>
+    <loc>https://vincentcheungcw.github.io/2020/music2019/</loc>
     
     <lastmod>2023-12-14</lastmod>
     
@@ -371,7 +371,7 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/2019/favShots2018/</loc>
+    <loc>https://vincentcheungcw.github.io/2019/favTvSeries2018/</loc>
     
     <lastmod>2023-12-14</lastmod>
     
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/2019/favTvSeries2018/</loc>
+    <loc>https://vincentcheungcw.github.io/2019/favShots2018/</loc>
     
     <lastmod>2023-12-14</lastmod>
     
@@ -398,6 +398,55 @@
 
   
   <url>
+    <loc>https://vincentcheungcw.github.io/tags/2019/</loc>
+    <lastmod>2023-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://vincentcheungcw.github.io/tags/%E7%94%B5%E5%BD%B1/</loc>
+    <lastmod>2023-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://vincentcheungcw.github.io/tags/2018/</loc>
+    <lastmod>2023-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://vincentcheungcw.github.io/tags/python/</loc>
+    <lastmod>2023-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://vincentcheungcw.github.io/tags/%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2023-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://vincentcheungcw.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2023-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://vincentcheungcw.github.io/tags/MySQL/</loc>
+    <lastmod>2023-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://vincentcheungcw.github.io/tags/Intellij-IDEA/</loc>
     <lastmod>2023-12-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -406,13 +455,6 @@
   
   <url>
     <loc>https://vincentcheungcw.github.io/tags/Java/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://vincentcheungcw.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2023-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -440,41 +482,6 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/tags/2019/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://vincentcheungcw.github.io/tags/%E7%94%B5%E5%BD%B1/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://vincentcheungcw.github.io/tags/2018/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://vincentcheungcw.github.io/tags/MySQL/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://vincentcheungcw.github.io/tags/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://vincentcheungcw.github.io/tags/%E6%AD%8C%E5%8D%95/</loc>
     <lastmod>2023-12-14</lastmod>
     <changefreq>weekly</changefreq>
@@ -496,14 +503,14 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/tags/2020/</loc>
+    <loc>https://vincentcheungcw.github.io/tags/%E6%96%87%E5%AD%A6/</loc>
     <lastmod>2023-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/tags/%E6%96%87%E5%AD%A6/</loc>
+    <loc>https://vincentcheungcw.github.io/tags/2020/</loc>
     <lastmod>2023-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -530,14 +537,28 @@
     <priority>0.2</priority>
   </url>
   
+
+  
   <url>
-    <loc>https://vincentcheungcw.github.io/tags/python/</loc>
+    <loc>https://vincentcheungcw.github.io/categories/%E7%94%B5%E5%BD%B1/</loc>
     <lastmod>2023-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
-
+  <url>
+    <loc>https://vincentcheungcw.github.io/categories/Python/</loc>
+    <lastmod>2023-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://vincentcheungcw.github.io/categories/MySQL/</loc>
+    <lastmod>2023-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
   <url>
     <loc>https://vincentcheungcw.github.io/categories/Java/</loc>
@@ -554,28 +575,7 @@
   </url>
   
   <url>
-    <loc>https://vincentcheungcw.github.io/categories/%E7%94%B5%E5%BD%B1/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://vincentcheungcw.github.io/categories/MySQL/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://vincentcheungcw.github.io/categories/%E9%9F%B3%E4%B9%90/</loc>
-    <lastmod>2023-12-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://vincentcheungcw.github.io/categories/Python/</loc>
     <lastmod>2023-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
