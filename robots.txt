@@ -1,3 +1,4 @@
+# hexo robots.txt
 User-agent: *
 Allow: /
 Allow: /archives/
@@ -11,6 +12,6 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://shikamaru-go.gitee.io/sitemap.xml
-Sitemap: https://shikamaru-go.gitee.io/baidusitemap.xml
+Sitemap: https://vincentcheungcw.github.io/sitemap.xml
+Sitemap: https://vincentcheungcw.github.io/baidusitemap.xml
 
