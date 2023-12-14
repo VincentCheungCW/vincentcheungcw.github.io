@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN">
+
+
+<head><!-- hexo injector head_begin start --><style type="text/css">.douban-card-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 400px;
+}
+
+.douban-card {
+    display: flex;
+    margin: 30px 10px;
+    padding: 15px;
+    border-radius: 15px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.douban-card:hover {
+    text-decoration: none;
+}
+
+.douban-card-bgimg {
+    position: absolute;
+    width: 115%;
+    height: 115%;
+    filter: blur(15px) brightness(0.6);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-img {
+    position: relative;
+    height: 130px;
+    width: 80px;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.douban-card-left:hover .douban-card-img {
+    filter: blur(5px) brightness(0.6);
+    transform: perspective(800px) rotateX(180deg);
+}
+
+.douban-card-left .douban-card-img {
+    transition: all 500ms ease;
+}
+
+.douban-card-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.douban-card-left .douban-card-status {
+    height: 130px;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    transition: all 500ms ease;
+}
+
+.douban-card-left:hover .douban-card-status {
+    transform: perspective(800px) rotateX(0deg);
+}
+
+.douban-card-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 16px;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1.3;
+    color: antiquewhite;
+}
+
+.douban-card-item {
+    margin-top: 4px;
+}
+</style><!-- hexo injector head_begin end -->
+  <meta name="google-site-verification" content="ONAHgiXrHjRzVsmDCBtEaQHJdFzjYINLdt91_2SYZLs" />
+  <meta name="baidu-site-verification" content="code-aVSJXuWLLZ" />
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="博客,IT,文学,音乐,电影,旅行" />
+   
+  <meta name="description" content="ever since i met you" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    Day 06 - Python 数据结构之 list 与 tuple |  小蒋同学
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+
+<!-- hexo injector head_end start --><script> let HEXO_MMEDIA_DATA = { js: [], css: [], aplayerData: [], metingData: [], artPlayerData: [], dplayerData: []}; </script><!-- hexo injector head_end end --></head>
+
+</html>
+
+<body>
+  <div id="app">
+    
+      
+      <canvas width="1777" height="841"
+        style="position: fixed; left: 0px; top: 0px; z-index: 99999; pointer-events: none;"></canvas>
+      
+    <main class="content on">
+      <section class="outer">
+  <article
+  id="post-python/Day06-Python数据结构之list和tuple"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  Day 06 - Python 数据结构之 list 与 tuple
+</h1>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/python06/" class="article-date">
+  <time datetime="2020-05-07T13:33:57.000Z" itemprop="datePublished">2020-05-07</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+  </div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <meta name="referrer" content="no-referrer" />
+
+
+<h2 id="list和tuple"><a href="#list和tuple" class="headerlink" title="list和tuple"></a>list和tuple</h2><p>sequence(序列)是一组有顺序的元素的集合。</p>
+<p>序列有两种：tuple（元组） 和 list (列表)，tuple和list的主要区别在于，tuple的各个元素一旦建立便不可再变更，而list的各个元素可以随意变更。 </p>
+<p>序列可以包含一个或多个元素，也可以没有任何元素。</p>
+<h2 id="1-序列通用操作"><a href="#1-序列通用操作" class="headerlink" title="1. 序列通用操作"></a>1. 序列通用操作</h2><h3 id="1-1-index-索引"><a href="#1-1-index-索引" class="headerlink" title="1.1 index (索引)"></a>1.1 index (索引)</h3><p>序列中所有元素都有编号，这些编号是从 0 开始，依次递增，这个编号就是索引，索引用来访问序列中每一个位置的元素，索引是<strong>从<code>0</code>开始</strong>的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates = [<span class="string">&#x27;Michael&#x27;</span>, <span class="string">&#x27;Bob&#x27;</span>, <span class="string">&#x27;Tracy&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[<span class="number">0</span>]</span><br><span class="line"><span class="string">&#x27;Michael&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[<span class="number">1</span>]</span><br><span class="line"><span class="string">&#x27;Bob&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[<span class="number">2</span>]</span><br><span class="line"><span class="string">&#x27;Tracy&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[<span class="number">3</span>]</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">&quot;&lt;stdin&gt;&quot;</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">IndexError: <span class="built_in">list</span> index out of <span class="built_in">range</span></span><br></pre></td></tr></table></figure>
+
+<p>当索引超出了范围时，Python会报一个<code>IndexError</code>错误，所以，要确保索引不要越界。</p>
+<p>如果要取最后一个元素，除了计算索引位置外，还可以用<code>-1</code>做索引，直接获取最后一个元素：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates[-1]</span><br><span class="line">&#x27;Tracy&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>以此类推，可以获取倒数第2个、倒数第3个：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates[-2]</span><br><span class="line">&#x27;Bob&#x27;</span><br><span class="line">&gt;&gt;&gt; classmates[-3]</span><br><span class="line">&#x27;Michael&#x27;</span><br><span class="line">&gt;&gt;&gt; classmates[-4]</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">IndexError: list index out of range</span><br></pre></td></tr></table></figure>
+
+<p>当然，倒数第4个就越界了。</p>
+<h3 id="1-2-分片"><a href="#1-2-分片" class="headerlink" title="1.2 分片"></a>1.2 分片</h3><p>分片是通过冒号操作来访问一定范围内的元素，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>num[<span class="number">3</span>:<span class="number">10</span>]    // 表示从第<span class="number">4</span>（含）个到第<span class="number">10</span>（不含）个元素</span><br><span class="line">[<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>num[<span class="number">0</span>:<span class="number">3</span>]    // 取前<span class="number">3</span>个数据</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+
+<p>由上所知，分片操作的的实现需要提供两个索引作为边界，是一个左闭右开的区间，也就是第 1 个索引包含在分片内，而第2个索引不包含在这个分片内。</p>
+<h3 id="1-3-序列相加"><a href="#1-3-序列相加" class="headerlink" title="1.3 序列相加"></a>1.3 序列相加</h3><p>通过加号<code>+</code>可以将两个序列连接起来：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;hello&#x27;</span>+<span class="string">&#x27; world !&#x27;</span></span><br><span class="line">  <span class="string">&#x27;hello world !&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]+[<span class="string">&#x27;zhangsan&#x27;</span>,<span class="string">&#x27;lisi&#x27;</span>,<span class="string">&#x27;wangwu&#x27;</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">&#x27;zhangsan&#x27;</span>, <span class="string">&#x27;lisi&#x27;</span>, <span class="string">&#x27;wangwu&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-4-in-运算符"><a href="#1-4-in-运算符" class="headerlink" title="1.4 in 运算符"></a>1.4 in 运算符</h3><p><code>in</code>运算符用于检查一个元素是否在一个序列中，是则返回 true，否则返回 false，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">str</span> = <span class="string">&#x27;believe&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;lie&#x27;</span> <span class="keyword">in</span> <span class="built_in">str</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;x&#x27;</span> <span class="keyword">in</span> <span class="built_in">str</span></span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-5-序列长度、最大值和最小值"><a href="#1-5-序列长度、最大值和最小值" class="headerlink" title="1.5 序列长度、最大值和最小值"></a>1.5 序列长度、最大值和最小值</h3><p>内建函数 len、max、min 分别用于获取序列长度、最大值和最小值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>([<span class="number">11</span>,<span class="number">34</span>,<span class="number">23</span>])</span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">max</span>([<span class="number">11</span>,<span class="number">34</span>,<span class="number">23</span>])</span><br><span class="line"><span class="number">34</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">min</span>([<span class="number">11</span>,<span class="number">34</span>,<span class="number">23</span>])</span><br><span class="line"><span class="number">11</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-list-列表"><a href="#2-list-列表" class="headerlink" title="2. list (列表)"></a>2. list (列表)</h2><p>列表是最常用的 Python 数据类型，它是一种有序的集合，可以随时添加和删除其中的元素。list用方括号<code>[ ]</code>表示。</p>
+<p>比如，列出班里所有同学的名字，就可以用一个list表示：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates = [<span class="string">&#x27;Michael&#x27;</span>, <span class="string">&#x27;Bob&#x27;</span>, <span class="string">&#x27;Tracy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">&#x27;Michael&#x27;</span>, <span class="string">&#x27;Bob&#x27;</span>, <span class="string">&#x27;Tracy&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>变量<code>classmates</code>就是一个list。</p>
+<p>要把某个元素替换成别的元素，可以直接赋值给对应的索引位置：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates[<span class="number">1</span>] = <span class="string">&#x27;Sarah&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">&#x27;Michael&#x27;</span>, <span class="string">&#x27;Sarah&#x27;</span>, <span class="string">&#x27;Tracy&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-1-常用的列表方法"><a href="#2-1-常用的列表方法" class="headerlink" title="2.1 常用的列表方法"></a>2.1 常用的列表方法</h3><p>列表提供了几个详细的方法，这些方法用于检查或者修改列表中的内容</p>
+<h4 id="2-1-1-append"><a href="#2-1-1-append" class="headerlink" title="2.1.1 append"></a>2.1.1 append</h4><p>append 方法用于在列表的末尾追加新的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>l = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l.append(<span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>l</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates.append(<span class="string">&#x27;Adam&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>classmates</span><br><span class="line">[<span class="string">&#x27;Michael&#x27;</span>, <span class="string">&#x27;Bob&#x27;</span>, <span class="string">&#x27;Tracy&#x27;</span>, <span class="string">&#x27;Adam&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-2-count"><a href="#2-1-2-count" class="headerlink" title="2.1.2 count"></a>2.1.2 count</h4><p>count 方法用于统计某个元素在列表中出现的次数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; numList = [1, 2, 3, 4, 5, 5, 5, 5, 6]</span><br><span class="line">&gt;&gt;&gt; num.count(5)    // 统计numList列表中5出现的次数</span><br><span class="line">4</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; name=[&#x27;a&#x27;,&#x27;a&#x27;,&#x27;abf&#x27;,&#x27;ark&#x27;,&#x27;nhk&#x27;]</span><br><span class="line">&gt;&gt;&gt; name.count(&#x27;a&#x27;)     // 统计name中字母a出现的次数</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-3-insert"><a href="#2-1-3-insert" class="headerlink" title="2.1.3 insert"></a>2.1.3 insert</h4><p>insert 方法用于把元素插入到指定的位置，比如索引为<code>1</code>的位置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates.insert(1, &#x27;Jack&#x27;)</span><br><span class="line">&gt;&gt;&gt; classmates</span><br><span class="line">[&#x27;Michael&#x27;, &#x27;Jack&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;, &#x27;Adam&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-4-pop"><a href="#2-1-4-pop" class="headerlink" title="2.1.4 pop"></a>2.1.4 pop</h4><p>要删除list末尾的元素，用<code>pop()</code>方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates.pop()</span><br><span class="line">&#x27;Adam&#x27;</span><br><span class="line">&gt;&gt;&gt; classmates</span><br><span class="line">[&#x27;Michael&#x27;, &#x27;Jack&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p>要删除指定位置的元素，用<code>pop(i)</code>方法，其中<code>i</code>是索引位置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates.pop(1)</span><br><span class="line">&#x27;Jack&#x27;</span><br><span class="line">&gt;&gt;&gt; classmates</span><br><span class="line">[&#x27;Michael&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;]</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-1-5-reverse"><a href="#2-1-5-reverse" class="headerlink" title="2.1.5 reverse"></a>2.1.5 reverse</h4><p>reverse 方法是将列表中的元素进行反转操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; x = [1, 2, 3]</span><br><span class="line">&gt;&gt;&gt; x.reverse()    // 元素反向存储</span><br><span class="line">x</span><br><span class="line">[3, 2, 1]</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-tuple-元组"><a href="#3-tuple-元组" class="headerlink" title="3. tuple (元组)"></a>3. tuple (元组)</h2><p>tuple和list非常类似，但是tuple一旦初始化就不能修改，元组用<code>( )</code>表示。比如同样是列出同学的名字：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; classmates = (&#x27;Michael&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>现在，classmates这个tuple不能变了，它也没有append()，insert()这样的方法。你可以正常地使用<code>classmates[0]</code>，<code>classmates[-1]</code>，但不能赋值成另外的元素。</p>
+<p>不可变的tuple有什么意义？因为tuple不可变，所以代码更安全。写代码时，能用tuple就尽量用tuple。</p>
+<h4 id="3-1-字符串是元组"><a href="#3-1-字符串是元组" class="headerlink" title="3.1 字符串是元组"></a>3.1 字符串是元组</h4><p>字符串是一种特殊的元组，因此可以执行元组的相关操作。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; str = &#x27;abcdef&#x27;</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; print(str[2:4])</span><br></pre></td></tr></table></figure>
+
+
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享到社交平台
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://vincentcheungcw.github.io/2020/python06/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag">编程</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2020/python07/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Day 07 - Python 数据结构之 dict 与 set
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/python05/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Day 05 - Python 流程控制</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "byIYeR5Wrc9joDc8Xxr0E5ux-gzGzoHsz",
+    app_key: "0tl8L4qNWiOpdBIkmBTbpzm9",
+    path: window.location.pathname,
+    avatar: "wavatar",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2020-2023
+        <i class="ri-heart-fill heart_icon"></i> shikamaru
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        
+        由 <a rel="external nofollow" href="https://hexo.io" target="_blank">Hexo</a> 强力驱动
+        <span class="division">|</span>
+        主题 - <a rel="external nofollow" href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>访问人数:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>浏览次数:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a rel="external nofollow" href="/"><img src="/images/left-side-logo1.JPG" alt="小蒋同学"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a rel="external nofollow" class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a rel="external nofollow" class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a rel="external nofollow" class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a rel="external nofollow" class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a rel="external nofollow" class="nav-item-link" href="/categories/%E9%9F%B3%E4%B9%90">听首歌</a>
+    </li>
+    
+    <li class="nav-item">
+      <a rel="external nofollow" class="nav-item-link" href="/categories/%E7%94%B5%E5%BD%B1">聊电影</a>
+    </li>
+    
+    <li class="nav-item">
+      <a rel="external nofollow" class="nav-item-link" href="/2020/about">关于我</a>
+    </li>
+    
+    <li class="nav-item">
+      <a rel="external nofollow" class="nav-item-link" href="/friends">探索</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://tva1.sinaimg.cn/large/008eGmZEly1gnktoasugsj30rm0rqqbl.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- ClickBoom1 -->
+
+<!-- ClickBoom2 -->
+
+
+<script src="/js/clickBoom2.js"></script>
+
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+<!-- CanvasBackground -->
+
+
+    
+  </div>
+<!-- hexo injector body_end start --><script src="/assets/mmedia/mmedia-loader.js"></script><!-- hexo injector body_end end --></body>
+
+</html>
